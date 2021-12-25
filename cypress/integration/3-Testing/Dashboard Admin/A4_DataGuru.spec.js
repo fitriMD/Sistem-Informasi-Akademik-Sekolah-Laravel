@@ -44,7 +44,6 @@ it("Create Guru", function () {
     
     cy.get("body > div > div.content-wrapper > section > div > div > div.col-md-12 > div > div.card-header > h3 > button.btn.btn-default.btn-sm").click();
     cy.wait(400);
-    // const filepath = 'images/firman.jpg'
     cy.contains("Tambah Data Guru").should("be.visible");
     cy.get("#nama_guru").type("Devi");
     cy.get("#nip").type("90815511");
