@@ -22,7 +22,7 @@ describe("Login Admin", function(){
             cy.get("body > div > div.content-wrapper > section > div > div > div.col-md-12 > div > div.card-header > h3 > button").click();
             cy.contains("Tambah Data Mapel").should("be.visible");
             
-            cy.get("#nama_mapel").type("Bisnis");
+            cy.get("#nama_mapel").type("Kewirausahaan");
             
             cy.get("#select2-paket_id-container").click().get("#paket_id").select("Bisnis kontruksi dan Properti",{force: true});
             
