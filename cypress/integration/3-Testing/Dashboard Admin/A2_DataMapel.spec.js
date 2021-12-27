@@ -22,15 +22,28 @@ describe("Login Admin", function(){
             cy.get("body > div > div.content-wrapper > section > div > div > div.col-md-12 > div > div.card-header > h3 > button").click();
             cy.contains("Tambah Data Mapel").should("be.visible");
             
-            cy.get("#nama_mapel").type("Matematika");
+            cy.get("#nama_mapel").type("Bisnis");
             
-            cy.get("#select2-paket_id-container").click().get("#paket_id").select("Semua",{force: true});
+            cy.get("#select2-paket_id-container").click().get("#paket_id").select("Bisnis kontruksi dan Properti",{force: true});
             
-            cy.get("#select2-kelompok-container").click().get("#kelompok").select("Pelajaran Umum",{force: true});
+            cy.get("#select2-kelompok-container").click().get("#kelompok").select("Pelajaran Keahlian",{force: true});
 
             cy.get("body > div.wrapper > div.content-wrapper > section > div > div > div.modal.fade.bd-example-modal-md.tambah-mapel.show > div > div > div.modal-footer.justify-content-between > button.btn.btn-primary").click();
 
+
+            //edit
+            cy.get("#example1 > tbody > tr > td:nth-child(5) > form > a").click();
+            cy.contains("Edit Mapel").should("be.visible");
+            cy.get("#nama_mapel").clear();
+            cy.get("#nama_mapel").type("Properti");
+            cy.get("body > div > div.content-wrapper > section > div > div > div > div > form > div.card-footer > button").click();
+            cy.get("#back").click();
+            cy.contains("Data Mapel").should("be.visible");
+
+            //hapus
+            cy.get("#example1 > tbody > tr > td:nth-child(5) > form > button").click();
         });
+
 
 });
 
