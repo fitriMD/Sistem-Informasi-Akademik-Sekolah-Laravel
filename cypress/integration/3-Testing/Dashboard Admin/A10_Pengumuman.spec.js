@@ -14,7 +14,7 @@ describe("Pengumuman", function () {
     cy.contains("Pengumuman").click();
     cy.get('.note-editable').clear()
     cy.get('.note-editable').type('Libur Semester Ganjil 2020/2021')
-    cy.get('.note-editable').type('{enter}Libur Semester Genap 2020/2021')
+    cy.get('.note-editable').type('{enter}Libur Semester Genap 2020/2021 ')
     cy.get('.btn-outline-primary').click({force :true})
     cy.contains('Dashboard').click()
     cy.visit("http://127.0.0.1:8000/")
